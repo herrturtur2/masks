@@ -7,13 +7,47 @@
   </head>
 
   <body onload="loadRings()">
-    <div id="rings" style="border: 1px solid">
-      <select id="ringSelect" size="10">
-      </select>
-      <br />
-      <input type="text" id="ringEntry" />
-      <input type="button" id="addRingButton" onclick="addRing()" value="Add Ring" />
-    </div>
+    <h1>
+      Masks
+    </h1>
+
+    <p>
+      A "ring" is a group of people. So far this site simply lets you add ring. Delete works except that a site refresh is required after hitting the button. Any feedback as to why that is would be very welcome.
+    </p>
+    <table>
+      <tr>
+	<!-- This row contains the select controls -->
+	<td>
+	  <select id="ringSelect" size="10">
+	    <!-- This select is populated with options by 
+		 scripts.js/loadRings() -->
+	  </select>
+	</td>
+
+	<td>
+	  <select id="personSelect" size="10">
+	    <!-- Todo: add a script to load persons from database -->
+	  </select>
+	</td>
+      </tr>
+
+      <tr>
+	<!-- This row contains the delete controls -->
+	<td>
+	  <input type="button" id="deleteRingButton" 
+		 value="Delete selected ring" 
+		 onclick="deleteRing(); loadRings()" />
+	</td>
+      </tr>
+
+      <tr>
+	<!-- This row contains the add records controls -->
+	<td>
+	  <input type="text" id="ringEntry" />
+	  <input type="button" id="addRingButton" 
+		 onclick="addRing(); loadRings()" value="Add Ring" />
+	</td>
+      </tr>
   </body>
 
 </html>

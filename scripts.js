@@ -23,6 +23,22 @@ function loadRings()
     xhr.send();
 }
 
+
+function deleteRing()
+{
+    var ringSelect = document.getElementById("ringSelect");
+    var xhr = new XMLHttpRequest();
+    var params = "ringid=" + 
+	ringSelect[ringSelect.selectedIndex].value.toString();
+
+    xhr.open("POST", "/masks/masks.py/deleteRing", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function(){}
+    xhr.send(params);
+}
+
+
 function addRing()
 {
     var ringEntry = document.getElementById("ringEntry");
@@ -34,5 +50,6 @@ function addRing()
     xhr.onreadystatechange = function() {}
     xhr.send(params);
 
+    // reload rings
     loadRings();
 }

@@ -32,6 +32,17 @@ def getRings(req):
     c.close()
     return sendstring
 
+
+def deleteRing(req):
+    f = req.form
+    ringid = int(f['ringid'])
+    
+    conn = sqlite3.connect(_DB_PATH)
+    c = conn.cursor()
+    c.execute("""delete from ring where id=?""", (ringid, ))
+    conn.commit()
+    c.close()
+
 def addRing(req):
     f = req.form
     ringname = f['ringname']
