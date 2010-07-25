@@ -1,0 +1,40 @@
+masks
+Joshua Marshall Moore
+7/24/2010
+
+Purpose:
+========
+This project aims to create a visual contact manager.
+The current focus is the web UI, but eventually a UI using ubigraph will be 
+implemented.
+
+Manifest:
+=========
++ index.html
++ json_parse.js
++ masks.db (You don't really need this file, masks.py will generate it for you)
++ masks.py (A mod_python publisher file)
++ scripts.js (contains the scripts for index.html)
+
+Installation
+============
+Install apache2, python 2.5.4 and mod_python on your machine.
+Place these files in the Document Root directory of apache.
+On my machine, they live in DocumentRoot/masks/
+
+The structure on my machine is as follows:
+DocumentRoot = C:\hope\www\masks\
+
+Contents of DocumentRoot:
+index.html
+json_parse.js
+masks.db
+masks.py
+scripts.js
+
+Contact:
+========
+For information contact 
+Joshua Marshall Moore: joshua.marshall.moore@gmail.com
+
+Your input is welcome!
