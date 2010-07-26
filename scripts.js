@@ -36,6 +36,8 @@ function deleteRing()
 
     xhr.onreadystatechange = function(){}
     xhr.send(params);
+
+    loadRings();
 }
 
 
