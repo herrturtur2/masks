@@ -6,7 +6,7 @@
     <script type="text/javascript" src="scripts.js"></script>
   </head>
 
-  <body onload="loadRings()">
+  <body onload="loadRings();">
     <h1>
       Masks
     </h1>
@@ -25,8 +25,8 @@
 	</td>
 
 	<td>
-	  <select id="personSelect" size="10">
-	    <!-- Todo: add a script to load persons from database -->
+	  <select id="personSelect" size="10" onChange="alert(this.options[this.selectedIndex].text)">
+	    <!-- Todo: fix a script to load persons from database -->
 	  </select>
 	</td>
       </tr>
@@ -36,7 +36,13 @@
 	<td>
 	  <input type="button" id="deleteRingButton" 
 		 value="Delete selected ring" 
-		 onclick="deleteRing(); loadRings()" />
+		 onclick="deleteRing(); loadRings();" />
+	</td>
+
+	<td>
+	  <input type="button" id="deletePersonButton"
+		 value="Delete selected Person"
+		 onclick="deletePerson(); loadPersons();" /> 
 	</td>
       </tr>
 
@@ -46,6 +52,12 @@
 	  <input type="text" id="ringEntry" />
 	  <input type="button" id="addRingButton" 
 		 onclick="addRing(); loadRings()" value="Add Ring" />
+	</td>
+
+	<td>
+	  <input type="text" id="personEntry" />
+	  <input type="button" id="addPersonButton"
+		 onclick="addPersonToRing(); loadPersons()" value="Add Person" />
 	</td>
       </tr>
   </body>
